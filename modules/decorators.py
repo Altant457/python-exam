@@ -1,5 +1,4 @@
 import functools
-
 def cache(func):
     """Keep a cache of previous function calls"""
     @functools.wraps(func)
@@ -31,7 +30,7 @@ class count_calls:
         self.num_calls += 1
         print(f"Call {self.num_calls} of {self.func.__name__!r}")
         return self.func(*args, **kwargs)
-    
+
 def debug(func):
     """Print the function signature and return value"""
     @functools.wraps(func)
