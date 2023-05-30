@@ -1,4 +1,4 @@
-Python exam project - Bornholmer gruppen
+#Python exam project - Bornholmer gruppen
 
 Vi forsøger os med at bruge machine learning algoritmer til at klassificere spil i forskellige genrer baseret på deres beskrivelse. 
 
