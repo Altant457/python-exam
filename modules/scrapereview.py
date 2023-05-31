@@ -49,7 +49,6 @@ def get_reviews(steamID):
         for review in reviews:
                 if not "Not" in review.string:
                     posReviews.append(review)
-                    #print(f"GameID: {review.a['href'].split('/')[6]}")
         
     if __name__ == "__main__":
         for review in posReviews:
