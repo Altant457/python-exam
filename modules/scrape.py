@@ -18,4 +18,18 @@ def get_game_details_from_appID(appID):
               .find("span")
               .find_all("a")]
     
-    return appName.string, appDesc.string, genres
+    return appName, appDesc, genres
+
+@cache
+def get_appID(appName):
+    if not hasattr(get_appID, "data"):
+        base_url = "https://api.steampowered.com/ISteamApps/GetAppList/v2/"
+        response = requests.get(base_url)
+        if response.status_code == 200:
+            data = response.json()
+            app_list = data['applist']['apps']
+            get_appID.data = app_list
+    for app in app_list:
+        if app['name'] == appName:
+            return app['appid']
+    return None
